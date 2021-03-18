@@ -5,15 +5,17 @@ public class Character {
     public int Def;
     public int Damage;
     private static Character instance;
-   private Character() {
+
+    private Character() {
         Health = 100;
         Def = 10;
         Damage = 10;
     }
-    public static Character getCharacter(){
-       if (instance==null){
-           instance = new Character();
-       }
-       return instance;
+
+    public static Character getCharacter() {
+        if (instance == null) {
+            instance = new Character();
+        }
+        return instance;
     }
 }

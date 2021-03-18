@@ -2,7 +2,7 @@ package com.example.textquest;
 
 import java.util.Map;
 
-abstract class ISituation {
+public abstract class ISituation {
     String title;
     String history;
     Map<String, IFabric> ways;
