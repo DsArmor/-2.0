@@ -16,4 +16,9 @@ public class W6 implements IFabric {
 //        ways.put("Пойдешь налево: сможешь отыскать то, что поможет уничтожить невзгоды.", new W8());
         return new SituationWithWays("Загадочный камень", history, ways);
     }
+
+    @Override
+    public void CurrentAttributes() {
+
+    }
 }

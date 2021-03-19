@@ -16,4 +16,9 @@ public class W11 implements IFabric {
 
         return new SituationWithWays("Поехали", history, ways);
     }
+
+    @Override
+    public void CurrentAttributes() {
+
+    }
 }

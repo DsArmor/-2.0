@@ -12,7 +12,7 @@ import com.example.textquest.situations.Start;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static Character hero;
+    Character hero;
 
     IFabric currentRoom = new Start();
 
@@ -44,16 +44,16 @@ public class MainActivity extends AppCompatActivity {
         TextView title = findViewById(R.id.title_of_story);
         TextView story = findViewById(R.id.story);
         TextView charactersOfHero= findViewById(R.id.characters);
-
+        charactersOfHero.setText("Здоровье: "+hero.Health+" Урон: "+hero.Damage+" Защита: "+hero.Def);
         title.setText(current.createSit().title);
         story.setText(current.createSit().history);
         if (current.createSit().ways.size()>0){
             String[] strings=current.createSit().ways.keySet().toArray(new String[current.createSit().ways.size()]);
             visible_and_set(b1,b2,b3,strings);
         } else {
-            b1.setText("Смерть");
-            b2.setText("Смерть");
-            b3.setText("Смерть");
+           b1.setVisibility(View.INVISIBLE);
+           b2.setVisibility(View.INVISIBLE);
+           b3.setVisibility(View.INVISIBLE);
         }
     }
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         hero = Character.getCharacter();
-
 
         Button b1 = (Button) findViewById(R.id.choice1);
         Button b2 = (Button) findViewById(R.id.choice2);
@@ -72,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String key= (String) b1.getText();
+
                 currentRoom = currentRoom.createSit().ways.get(key);
+                currentRoom.CurrentAttributes();
                 if (currentRoom!=null){
                     PutData(currentRoom, b1, b2, b3);
                 }
@@ -82,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String key= (String) b2.getText();
+
                 currentRoom = currentRoom.createSit().ways.get(key);
+                currentRoom.CurrentAttributes();
                 if (currentRoom!=null){
                     PutData(currentRoom, b1, b2, b3);
                 }
@@ -92,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String key= (String) b3.getText();
+
                 currentRoom = currentRoom.createSit().ways.get(key);
+                currentRoom.CurrentAttributes();
                 if (currentRoom!=null){
                     PutData(currentRoom, b1, b2, b3);
                 }

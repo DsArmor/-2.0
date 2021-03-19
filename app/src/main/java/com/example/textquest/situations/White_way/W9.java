@@ -15,4 +15,9 @@ public class W9 implements IFabric {
 
         return new SituationWithWays("Ночные подключения", history, ways);
     }
+
+    @Override
+    public void CurrentAttributes() {
+
+    }
 }

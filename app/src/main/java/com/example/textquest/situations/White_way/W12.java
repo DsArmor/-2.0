@@ -15,4 +15,9 @@ public class W12 implements IFabric{
         ways.put("Забрать сокровища я сказал!", new W13());
         return new SituationWithWays("Хмм....", history, ways);
     }
+
+    @Override
+    public void CurrentAttributes() {
+
+    }
 }

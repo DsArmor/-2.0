@@ -1,5 +1,6 @@
 package com.example.textquest.situations;
 
+import com.example.textquest.Character;
 import com.example.textquest.IFabric;
 import com.example.textquest.ISituation;
 import com.example.textquest.SituationWithWays;
@@ -14,5 +15,10 @@ public class GenerateSituation1 implements IFabric {
         ways.put("Двигаться к свету", new GenerateSituation4());
         ways.put("Остаться в пещере и осмотреться", new GenerateSituation5());
         return new SituationWithWays("Поехали", history, ways);
+    }
+
+    @Override
+    public void CurrentAttributes() {
+
     }
 }

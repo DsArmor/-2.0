@@ -4,7 +4,7 @@ public class Character {
     public int Health;
     public int Def;
     public int Damage;
-    private static Character instance;
+    private static Character instance=null;
 
     private Character() {
         Health = 100;

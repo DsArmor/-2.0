@@ -12,8 +12,13 @@ public class W7 implements IFabric {
     @Override
     public ISituation createSit() {
         HashMap<String, IFabric> ways = new HashMap<>();
-        ways.put("К камню", new W6());
-        ways.put("На поляну к огру", new W5());
+        ways.put("К камню", new W2());
+        ways.put("На поляну к огру", new W4());
         return new SituationWithWays("Огр", history, ways);
+    }
+
+    @Override
+    public void CurrentAttributes() {
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.textquest.situations;
 
+import com.example.textquest.Character;
 import com.example.textquest.IFabric;
 import com.example.textquest.ISituation;
 import com.example.textquest.SituationWithWays;
@@ -7,6 +8,12 @@ import com.example.textquest.SituationWithWays;
 import java.util.HashMap;
 
 public class GenerateSituation5 implements IFabric {
+    public void CurrentAttributes(){
+        Character hero = Character.getCharacter();
+        hero.Health-=10;
+        hero.Damage+=5;
+        hero.Def-=1;
+    }
     String history = "Вы обшариваете все стены в поисках чего-то, что должно было бы сказать вам о том, откуда вы, почему появились в этой пещере и подсказки для следующих действий, но тщетно, тишина начинает на вас давить, плюнув на все, вы двигаетесь к свету\n" +
             "Но не пройдя и пары шагов, вы вдруг замечаете выступ в стене, на котором переливается свет не так, как на всем окружающем. С любопытством вы подходите к нему\n";
     @Override

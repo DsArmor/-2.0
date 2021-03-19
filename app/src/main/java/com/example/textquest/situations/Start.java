@@ -15,4 +15,8 @@ public class Start implements IFabric {
         ways.put("Не хочу, отпутите", new GenerateSituation3());
         return new SituationWithWays("Начало", history, ways);
     }
+
+    @Override
+    public void CurrentAttributes() {
+    }
 }
